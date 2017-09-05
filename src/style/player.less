@@ -1,46 +1,148 @@
+.player-container{
+    background-color: #f6f6f6;
+    .player{
+        width:700px;
+        padding-left:10px;
+        padding-bottom:40px;
+        margin:0 auto;
+        padding-top:100px;
+        .caption{
+            font-size:16px;
+            // line-height:48px;
+            padding:20px 0;
+            a{  
+                text-decoration: none;
+                color:rgb(47,152,66)
+            }
+        }
+        .music-title{
+            font-size:25px;
+            font-weight: 400;
+            color:rgb(3,3,3);
+            height:36px;
+            // line-height:36px;
+             padding:20px 0;
+        }
+        .music-artist{
+            padding:10px 0;
+            // padding-bottom:5px;
+            font-size:15px;
+            font-weight:400;
+            color:rgb(74,74,74);
+        }
+        .volume-container{
+            display:flex;
+            align-items:center;
+            .left-time{
+                // padding-right:20px;
+                font-size:14px;
+                font-weight: 400;
+                color:#999;
+                width:60px;
+                // display:inline-block;
+            }
+            .volume-wrapper{
+                opacity:0;
+                transition:opacity 0.5s ease-in-out;
+                &:hover{
+                    opacity:1;
+                }
+            }
+            // .volume-wrapper:hover{
+                
+            // }
 
-// .player{
-    .icon-volume{
-        display:inline-block;
-        width:16px;
-        height:16px;
-    /*  background是CSS简写属性，用来集中设置各种背景属性，可以用来设置一个或多个属性：background-color,
-    background-image,background-position,background-repeat,background-size,background-attachment*/
-        background:url(/image/icons.png) no-repeat;
-        background-position:0 -112px;//第一个为元素在水平方向上的偏移量，第二个为元素在竖直方向上的偏移量
-        background-size:16px;//设置背景图片大小，第一个值指定图片的宽度，第二个值指定图片的高度，如不设置隐式的为auto
-    }
-    .icon-nosound{
-        display:inline-block;
-        width:16px;
-        height:16px;
-        background: url(/image/nosound.jpg) no-repeat;
-        background-position: 0 0;
-        background-size: 16px;
+        }
+        .progress-container{
+            margin-bottom:30px;
+        }
+        .icon{
+            display:inline-block;
+            width:32px;
+            height:32px;
+            background: url(/image/icons.png) no-repeat;
+            background-size: 32px;
+            margin:3px 5px;
+        }
+        .icon-prev{
+            // display:inline-block;
+            // width:32px;
+            // height:32px;
+            // background: url(/image/icons.png) no-repeat;
+            margin-left:0;
+            background-position: 0 0;
+            // background-size: 32px;
+        }
+        .icon-pause{
+            background-position: 0 -64px;
+        }
+        .icon-play{
+            background-position: 0 -96px;
+        }
+        .icon-next{
+            // display:inline-block;
+            // width:32px;
+            // height:32px;
+            // background:url(/image/icons.png) no-repeat;
+            background-position: 0 -32px;
+            // background-size: 32px;
+        }
+        .icon-volume{
+            display:inline-block;
+            width:16px;
+            height:16px;
+        /*  background是CSS简写属性，用来集中设置各种背景属性，可以用来设置一个或多个属性：background-color,
+        background-image,background-position,background-repeat,background-size,background-attachment*/
+            background:url(/image/icons.png) no-repeat;
+            background-position:0 -112px;//第一个为元素在水平方向上的偏移量，第二个为元素在竖直方向上的偏移量
+            background-size:16px;//设置背景图片大小，第一个值指定图片的宽度，第二个值指定图片的高度，如不设置隐式的为auto
+        }
+        .icon-nosound{
+            display:inline-block;
+            width:16px;
+            height:16px;
+            background: url(/image/nosound.jpg) no-repeat;
+            background-position: 0 0;
+            background-size: 16px;
 
+        }
+        .icon-cycle{
+            // display:inline-block;
+            // width:32px;
+            // height:32px;
+            // background: url(/image/icons.png) no-repeat;
+            background-position:0 -160px;
+            // background-size:32px;
+        }
+        .icon-once{
+            // display:inline-block;
+            // width:32px;
+            // height:32px;
+            // background:url(/image/icons.png) no-repeat;
+            background-position:0 -128px;
+            // background-size:32px;
+        }
+        .icon-random{
+            // display:inline-block;
+            // width:32px;
+            // height:32px;
+            // background:url(/image/icons.png) no-repeat;
+            background-position: 0 -192px;
+            // background-size: 32px;
+        }
+        .repeat{
+            float:right;
+        }
+        .cover{
+            float:right;
+            width:180px;
+            height:180px;
+            margin-left:20px;
+            img{
+                width:180px;
+                height:180px;
+                border-radius:50%;
+            }
+        }
     }
-    .icon-cycle{
-        display:inline-block;
-        width:32px;
-        height:32px;
-        background: url(/image/icons.png) no-repeat;
-        background-position:0 -160px;
-        background-size:32px;
-    }
-    .icon-once{
-        display:inline-block;
-        width:32px;
-        height:32px;
-        background:url(/image/icons.png) no-repeat;
-        background-position:0 -128px;
-        background-size:32px;
-    }
-    .icon-random{
-        display:inline-block;
-        width:32px;
-        height:32px;
-        background:url(/image/icons.png) no-repeat;
-        background-position: 0 -192px;
-        background-size: 32px;
-    }
-// }
+}

@@ -40,7 +40,7 @@ Element.clientWidth 返回该dom元素可见的内容宽度。（Element.scrollW
 不使用hashHistory或browserHistory时程序报错
 
 #### 5. 
-使用React.cloneElement(this.prips.children,this.state)返回一个新的包含所需属性的组件,而不是直接使用{this.props.children}
+使用React.cloneElement(this.prips.children,this.state)返回一个新的包含所需属性的元素,而不是直接使用{this.props.children}
 
 #### 6.
 在JSX中，赋值给onClick的应该是一个函数的句柄，而不是一个立即执行的函数，因此当需要传递参数时，先使用bind进行硬绑定传入参数返回一个新的函数句柄
@@ -54,5 +54,13 @@ Element.clientWidth 返回该dom元素可见的内容宽度。（Element.scrollW
 如何在事件中进行页面跳转？
 browserHistory.push(path)
 
+#### 10.
+直接在组件上加className?一般可在外层嵌套一层div进行样式编写
+
+#### 11.
+less中的&:hover简写
+
+#### 12.
+在JSX中可以直接写width等属性吗？某些标签如img可以直接写，在一般的标签中不可以，需要通过style对象设置样式
 
 

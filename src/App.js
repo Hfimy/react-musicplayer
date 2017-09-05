@@ -44,7 +44,7 @@ class App extends Component {
     //   this.playMusic(this.state.musicList[newIndex]);
     // }
     //当删除最后一项时，默认让播放器播放最后一首音乐
-    this.palyMusic(this.state.musicList[newIndex]);
+    this.playMusic(this.state.musicList[newIndex]);
 
   }
   playWhenEnd = () => {
@@ -121,7 +121,7 @@ export default () => {
   return (
     <Router history={browserHistory}>
       <Route path='/' component={App}>
-        <IndexRoute component={Player} />
+        <IndexRoute component={Player}/>
         <Route path='/list' component={MusicList} />
       </Route>
     </Router>

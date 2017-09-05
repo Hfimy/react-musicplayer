@@ -9,7 +9,7 @@ import { Link } from 'react-router'
 
 import Pubsub from 'pubsub-js'
 
-let duration = null,lastVolume=null;
+let duration = null, lastVolume = null;
 
 class Player extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class Player extends Component {
             progress: 0,
             isPlay: true,
             leftTime: '',
-            volumeStyle:'volume'
+            volumeStyle: 'volume'
         }
     }
     componentDidMount() {
@@ -71,54 +71,65 @@ class Player extends Component {
     playNext() {
         Pubsub.publish('PLAY_NEXT')
     }
-    volumeHandler=()=> {
+    volumeHandler = () => {
         if (this.state.volume) {
-            lastVolume=this.state.volume/100;
+            lastVolume = this.state.volume / 100;
             $('#player').jPlayer('volume', 0)
-            this.setState({volumeStyle:'nosound'})
-        }else{
+            this.setState({ volumeStyle: 'nosound' })
+        } else {
             $('#player').jPlayer('volume', lastVolume)
-            this.setState({volumeStyle:'volume'})
+            this.setState({ volumeStyle: 'volume' })
         }
     }
-    repeatTypeChange(type){
-        Pubsub.publish("CHANGE_REPEAT",type)
+    repeatTypeChange(type) {
+        Pubsub.publish("CHANGE_REPEAT", type)
     }
     render() {
         return (
-            <div className='player'>
-                <h1><Link to='/list'>我的私人音乐坊 &gt;</Link></h1>
-                <div>
+            <div className='player-container'>
+                <div className='player'>
+                    <h1 className='caption'><Link to='/list'>我的私人音乐坊 &gt;</Link></h1>
                     <div>
-                        <h2>{this.props.currentMusicItem.title}</h2>
-                        <h3>{this.props.currentMusicItem.artist}</h3>
-                        <div>
-                            <div>-{this.state.leftTime}</div>
-                            <i className={`icon-${this.state.volumeStyle}`} onClick={this.volumeHandler}></i>
-                            <Progress progress={this.state.volume}
-                                onChangeProgress={this.changeVolume}
-                                bgColor='#22e' />
+                        <div style={{ overflow: 'hidden' }}>
+                            <div style={{float:'left'}}>
+                                <h2 className='music-title'>{this.props.currentMusicItem.title}</h2>
+                                <h3 className='music-artist'>{this.props.currentMusicItem.artist}</h3>
+                                <div className='volume-container'>
+                                    <div className='left-time'>-{this.state.leftTime}</div>
+                                    <i className={`icon-${this.state.volumeStyle}`} onClick={this.volumeHandler}></i>
+                                    <div className="volume-wrapper">
+                                        <Progress progress={this.state.volume}
+                                            onChangeProgress={this.changeVolume}
+                                            bgColor='#aaa'
+                                            width="324" />
+                                    </div>
+                                </div>
+                                <div className='progress-container'>
+                                    <Progress
+                                        progress={this.state.progress}
+                                        onChangeProgress={this.changeProgress} />
+                                </div>
+                                <div style={{ width: 400, float: 'left' }}>
+                                    <i className='icon icon-prev' onClick={this.playPrev}></i>
+                                    <i className={`icon icon-${this.state.isPlay ? 'pause' : 'play'}`} onClick={this.play.bind(this)}></i>
+                                    <i className='icon icon-next' onClick={this.playNext}></i>
+                                    <i className={`icon icon-${this.props.repeatType} repeat`} onClick={this.repeatTypeChange.bind(this, this.props.repeatType)}></i>
+                                </div>
+                            </div>
+                            <div className='cover'>
+                                <img src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title} />
+                            </div>
                         </div>
-                        <Progress
-                            progress={this.state.progress}
-                            onChangeProgress={this.changeProgress} />
-                        <div>
-                            <i onClick={this.playPrev}>&lt;</i>
-                            <i onClick={this.play.bind(this)}>播放/暂停</i>
-                            <i onClick={this.playNext}>&gt;</i>
-                            <i className={`icon-${this.props.repeatType}`} onClick={this.repeatTypeChange.bind(this,this.props.repeatType)}></i>
-                        </div>
-                    </div>
-                    <div>
-                        <img src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title} />
+
                     </div>
                 </div>
             </div>
+
         )
     }
 }
-Player.propTypes={
-    currentMusicItem:PropTypes.object.isRequired,
-    repeatType:PropTypes.string.isRequired
+Player.propTypes = {
+    currentMusicItem: PropTypes.object.isRequired,
+    repeatType: PropTypes.string.isRequired
 }
 export default Player

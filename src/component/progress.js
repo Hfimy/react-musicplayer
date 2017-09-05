@@ -11,7 +11,7 @@ class Progress extends Component{
     }
     render(){
         return(
-            <div className='progress-bar' ref='progress' onClick={this.changeProgress.bind(this)}>
+            <div className='progress-bar' style={{width:this.props.width}} ref='progress' onClick={this.changeProgress.bind(this)}>
                 <div className='progress' style={{width:`${this.props.progress}%`,backgroundColor:`${this.props.bgColor}`}}></div>
             </div>
         )
@@ -19,11 +19,13 @@ class Progress extends Component{
 }
 
 Progress.propTypes={
+    width:PropTypes.string,
     progress:PropTypes.number,
     bgColor:PropTypes.string,
     onChangeProgress:PropTypes.func
 }
 Progress.defaultProps={
+    width:400,
     progress:0,
     bgColor:"#e11",
     onChangeProgress:f=>f
