@@ -1,7 +1,19 @@
 ## music player build by React
 
 ### overview
+![player.png](https://github.com/Hfimy/react-musicplayer/blob/master/public/image/player.png?raw=true)
 
+![musicList.png](https://github.com/Hfimy/react-musicplayer/blob/master/public/image/musicList.png?raw=true)
+
+### How to run
+```
+cnpm i    //使用淘宝镜像源，安装依赖
+npm start
+```
+### How to build
+```
+npm run build
+```
 ### Music player 开发过程笔记总结
 
 #### 1. create-react-app项目添加less配置
