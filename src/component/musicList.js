@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MusicItem from './musicItem'
 import { Link } from 'react-router'
 import PropTypes from 'prop-types'
-
+import '../style/musicList.less'
 class MusicList extends Component {
     render() {
         let listEle = null;
@@ -12,18 +12,21 @@ class MusicList extends Component {
             )
         })
         return (
-            <div>
+            <div className='music-list'>
                 <ul>
                     {listEle}
                 </ul>
-                <Link to='/'>返回播放页</Link>
+                <div className='link'>
+                    <Link to='/'>返回播放页</Link>
+                </div>
+
             </div>
 
         )
     }
 }
 
-MusicList.propTypes={
-    musicList:PropTypes.array.isRequired
+MusicList.propTypes = {
+    musicList: PropTypes.array.isRequired
 }
 export default MusicList

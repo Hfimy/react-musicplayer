@@ -16,9 +16,9 @@ class MusicItem extends Component{
     render(){
         let musicItem=this.props.musicItem
         return(
-            <li onDoubleClick={this.playMusic.bind(this,musicItem)} className={`${this.props.focus?'focus':''}`}>
-                <span>{musicItem.title}--{musicItem.artist}</span>
-                <input type="button" value='Delete' onClick={this.deleteMusic.bind(this,musicItem)}/>
+            <li onDoubleClick={this.playMusic.bind(this,musicItem)} className={`music-item ${this.props.focus?'focus':''}`}>
+                <span>{musicItem.title} -- {musicItem.artist}</span>
+                <span className='delete'  onClick={this.deleteMusic.bind(this,musicItem)}/>
             </li>
         )
     }

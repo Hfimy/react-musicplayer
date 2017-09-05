@@ -1,3 +1,7 @@
+## music player build by React
+
+### overview
+
 ### Music player 开发过程笔记总结
 
 #### 1. create-react-app项目添加less配置
@@ -58,9 +62,15 @@ browserHistory.push(path)
 直接在组件上加className?一般可在外层嵌套一层div进行样式编写
 
 #### 11.
-less中的&:hover简写
+
+less中的&:hover简写，同一标签的多个样式可以用  &  加.className来嵌套书写
 
 #### 12.
 在JSX中可以直接写width等属性吗？某些标签如img可以直接写，在一般的标签中不可以，需要通过style对象设置样式
 
 
+#### 13.
+当元素设置浮动时，对后一个元素会有影响，需要添加clear:both ; 对父元素造成影响时，在父元素里指定width并添加overflow:hidden可尝试消除浮动带来的影响。
+
+#### 14.
+在flex弹性盒子布局中，子项的margin不与相邻的flex item折叠，margin为auto时会自动伸缩包含剩余的空间，如在此项目中将delete按钮置于最右边，可在该item上设置margin-left:auto或在前一项中设置margin-right:auto来实现。可通过设置margin:auto来实现item的居中。
