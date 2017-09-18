@@ -1,6 +1,8 @@
 ## music player build by React
-### 补充，后续更新
+### 补充，后续更新 -- 项目演示地址：[https://hfimy.github.io/react-musicplayer](https://hfimy.github.io/react-musicplayer)
 ![reactmusicplayer](https://github.com/Hfimy/react-musicplayer/blob/master/public/image/reactmusicplayer.gif?raw=true)
+
+
 ### overview
 ![player.png](https://github.com/Hfimy/react-musicplayer/blob/master/public/image/player.png?raw=true)
 
