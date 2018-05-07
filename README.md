@@ -3,7 +3,7 @@
 ### 补充，后续更新 -- 项目在线演示地址：[https://hfimy.github.io/react-musicplayer](https://hfimy.github.io/react-musicplayer)
 (请在谷歌浏览器预览）
 
-### overview
+### preview
 ![reactmusicplayer](https://github.com/Hfimy/react-musicplayer/blob/master/public/image/reactmusicplayer.gif?raw=true)
 
 **注：更新后的项目代码放在gh-pages分支下**
